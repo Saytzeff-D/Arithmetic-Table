@@ -1,0 +1,38 @@
+.multi{
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+}
+.box1{
+	width: 100%;
+	height: 200px;
+	background-color: green;
+}
+.col{
+	margin-left: 400px;
+	margin-top: -40px;
+	width: 100px;
+	height: 30px;
+}
+.raw{
+	margin-left: 40px;
+	margin-top: 80px;
+	width: 100px;
+	height: 30px;
+}
+.dis{
+	margin-left: 800px;
+	margin-top: -20px;
+	width: 400px;
+	height: 100px;
+
+}
+.wel{
+	width: 100px;
+	height: 30px;
+	background-color: yellow;
+}
+#ans{
+	width: 100%;
+	height: 300px;
+}

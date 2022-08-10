@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="multiply.css">
+</head>
+<body>
+   <p class="multi">MULTIPLICATION TABLE</p>
+   <div class="box1">
+   <input type="number" id="column" name="" placeholder="COLUMNS" class="col">
+   <input type="number" id="row" name="" placeholder="ROWS" class="raw">
+   <div class="dis">
+   <button class="wel" onclick="clickMe()">DISPLAY</button>
+   	 <select id="map" class="wel">
+   	 	<option value="+">ADD</option>
+   	 	<option value="*">MULTIPLY</option>
+   	 	<option  value="/">DIVIDE</option>
+   	 	<option value="-">SUBTRACT</option>
+   	 </select>
+   	</div>
+   	 </div>
+   	 <br><br>
+   	 <div id="ans"></div>
+   	 <script type="text/javascript">
+   	 	function clickMe() {
+	var x = "";
+	x+="<Table>"
+	for(i=1; i<=column.value; i++) {
+		x+="<td>"
+		x+="Table " + i
+		x+="<Table border='1px' solid black>";
+
+		for(a=1; a<=row.value; a++) {
+			x+="<tr><td>"+(i+map.value+a)+ "="
+			+eval(i+map.value+a)+ "<td><tr>"
+		}
+x+="</Table></td>"
+		} 
+		x=="</tr></Table>"
+       ans.innerHTML= x;
+	}
+   	 </script>
+</body>
+</html>
