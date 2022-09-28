@@ -3,42 +3,47 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="multiply.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-   <p class="multi">MULTIPLICATION TABLE</p>
-   <div class="box1">
-   <input type="number" id="column" name="" placeholder="COLUMNS" class="col">
-   <input type="number" id="row" name="" placeholder="ROWS" class="raw">
-   <div class="dis">
-   <button class="wel" onclick="clickMe()">DISPLAY</button>
-   	 <select id="map" class="wel">
-   	 	<option value="+">ADD</option>
-   	 	<option value="*">MULTIPLY</option>
-   	 	<option  value="/">DIVIDE</option>
-   	 	<option value="-">SUBTRACT</option>
-   	 </select>
-   	</div>
-   	 </div>
-   	 <br><br>
-   	 <div id="ans"></div>
+	<div class="container-fluid bg-success pb-1 arithmetic-body">
+		<p class="text-center h1 text-white pt-3">Arithmetic Table</p>
+		<div class="d-flex justify-content-center">
+			<div class="col-md-5 d-flex">
+				<input type="number" id="row" name="" placeholder="ROWS" class="form-control mx-1">
+				<input type="number" id="column" name="" placeholder="COLUMNS" class="form-control mx-1">
+				<select id="operator" class="form-control mx-1">
+					<option value="+">ADD</option>
+					<option value="*">MULTIPLY</option>
+					<option  value="/">DIVIDE</option>
+					<option value="-">SUBTRACT</option>
+				</select>
+			</div>
+		</div>
+		<div class="d-flex justify-content-center my-2">
+			<button class="btn-warning" onclick="clickMe()">DISPLAY</button>
+		</div>
+		<div id="ans"></div>
+	</div>
    	 <script type="text/javascript">
    	 	function clickMe() {
-	var x = "";
-	x+="<Table>"
-	for(i=1; i<=column.value; i++) {
-		x+="<td>"
-		x+="Table " + i
-		x+="<Table border='1px' solid black>";
+			var x = "";
+			x+="<table class='table table-responsive'>"
+			for(i=1; i<=column.value; i++) {
+				x+="<td>"
+				x+="Table " + i
+				// let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16) generate random color
+				x+=`<table border='1px' solid black class='table table-responsive table-success shadow-lg' >`;
 
-		for(a=1; a<=row.value; a++) {
-			x+="<tr><td>"+(i+map.value+a)+ "="
-			+eval(i+map.value+a)+ "<td><tr>"
+				for(a=1; a<=row.value; a++) {
+					x+="<tr><td>"+(i + operator.value+a) + ' ' + "=" + ' ' +
+					+ eval(i+operator.value+a).toFixed(2)+ "</td></tr>"
+				}
+				x+="</table>"
+			} 
+			x=="</td></table>"
+			ans.innerHTML= x;
 		}
-x+="</Table></td>"
-		} 
-		x=="</tr></Table>"
-       ans.innerHTML= x;
-	}
    	 </script>
 </body>
 </html>

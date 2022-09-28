@@ -14,7 +14,7 @@
 	width: 100px;
 	height: 30px;
 }
-.raw{
+.row{
 	margin-left: 40px;
 	margin-top: 80px;
 	width: 100px;
@@ -31,8 +31,4 @@
 	width: 100px;
 	height: 30px;
 	background-color: yellow;
-}
-#ans{
-	width: 100%;
-	height: 300px;
 }
